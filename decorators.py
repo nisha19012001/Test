@@ -1,6 +1,7 @@
 def decorator_func(f):
 	def wrapper(num,den):
 		try:
+			print("Entering inside decorator function")
 			if(den==0):
 				raise Exception("Division by zero")
 			result = f(num,den)
@@ -12,6 +13,7 @@ def decorator_func(f):
 			
 @decorator_func
 def divide(numerator,denominator):
+	print("Entering inside actual function")
 	result = numerator/denominator
 	return result
 
